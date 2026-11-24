@@ -32,3 +32,4 @@ jobs:
         with:
           name: Also-Alien-HQ-Logo
           path: Also_Alien_Logo_Transparent_HQ.png
+          compression-level: 9
