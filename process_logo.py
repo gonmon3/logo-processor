@@ -32,7 +32,7 @@ out_data[:, :, 3] = alpha * 255.0
 out_img = Image.fromarray(out_data.astype(np.uint8))
 
 # 8x Upscale for high-res output
-final_size = (img.width * 8, img.height * 8)
+final_size = (img.width * 6, img.height * 6)
 out_img = out_img.resize(final_size, Image.Resampling.LANCZOS)
 
 out_img.save('Also_Alien_Logo_Transparent_HQ.png')
