@@ -1,0 +1,34 @@
+name: Process High-Res Logo
+
+# Allows you to trigger the workflow manually from the Actions tab
+on: workflow_dispatch 
+
+jobs:
+  process-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out your repository files
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Set up the Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # 3. Install the required image-processing libraries
+      - name: Install dependencies
+        run: pip install numpy Pillow scipy
+
+      # 4. Run the Python script
+      - name: Execute script
+        run: python process_logo.py
+
+      # 5. Upload the processed image as an artifact
+      - name: Upload output artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Also-Alien-HQ-Logo
+          path: Also_Alien_Logo_Transparent_HQ.png
