@@ -3,7 +3,7 @@ from PIL import Image
 from scipy.ndimage import distance_transform_edt
 
 # Load original logo
-img = Image.open('also_alien_logo.png').convert("RGBA")
+img = Image.open('also_alien_ship.png').convert("RGBA")
 data = np.array(img).astype(float)
 
 # Also Alien background color
